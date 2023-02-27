@@ -4,8 +4,8 @@ function Tentang() {
   return (
     <>
       <div>
-        <div className='xl:px-52 lg:px-32 md:px-5 xs:px-5 text-justify'>
-          <div className='shadow-lg p-5 mt-3 rounded-xl'>
+        <div className='xl:px-52 lg:px-32 md:px-5 xs:px-5 text-justify '>
+          <div className='shadow-lg p-5 mt-3 rounded-xl bg-white'>
             <div className='font-bold text-2xl'> Bluescres Gaming Store </div>
             <br />
             <p> Adalah sebuah platform top-up atau pengisian ulang saldo game online yang berbasis di Indonesia. Melalui Bluescres Gaming Store, pengguna dapat melakukan pembelian voucher game online dan mengisi ulang saldo game mereka, termasuk game populer seperti Mobile Legends, Free Fire, PUBG Mobile, dan banyak lagi.</p>
