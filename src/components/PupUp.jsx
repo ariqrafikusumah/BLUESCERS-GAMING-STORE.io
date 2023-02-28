@@ -74,23 +74,6 @@ function PopUp({ isOpen, onClose }) {
                             <div className="inline-block align-bottom rounded-lg text-left overflow-hidden  transform transition-all sm:my-32 sm:align-middle sm:max-w-lg sm:w-full">
                                 <div className=" pb-4 sm:p-6 sm:pb-4">
                                     <div className="sm:flex sm:items-start">
-                                        {/* <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-indigo-100 sm:mx-0 sm:h-10 sm:w-10">
-                                        <svg
-                                            className="h-6 w-6 text-indigo-600"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                            aria-hidden="true"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M12 19l.00001-.00001M12 5l.00001-.00001M4.929 7.757l.00001-.00001M19.071 16.243l.00001-.00001"
-                                            />
-                                        </svg>
-                                    </div> */}
                                         <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                                             <Dialog.Title
                                                 as="h3"
@@ -98,16 +81,15 @@ function PopUp({ isOpen, onClose }) {
                                             >
                                                 Selamat Datang
                                             </Dialog.Title>
-                                            <div className="mt-2">
-                                                {dataView.map((item) => {
-                                                    <img className='shadow-xl rounded-xl' src={item.popup} alt="Pop Up" />
-                                                    {/* <p className="text-sm text-gray-500">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                Suspendisse malesuada lacus ex, sit amet blandit leo
-                                                lobortis eget.
-                                            </p> */}
-                                                })}
-                                            </div>
+                                            {dataView.map((item) => {
+                                                return (
+                                                    <>
+                                                        <div className="mt-2">
+                                                            <img className='shadow-xl rounded-xl' src={item.popup} alt="Pop Up" />
+                                                        </div>
+                                                    </>
+                                                )
+                                            })}
                                         </div>
                                     </div>
                                 </div>
@@ -126,5 +108,10 @@ function PopUp({ isOpen, onClose }) {
                 </Dialog>
             </Transition.Root>
         );
+    else {
+        <>
+            gagal
+        </>
+    }
 }
 export default PopUp;
