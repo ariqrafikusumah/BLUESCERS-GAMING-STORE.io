@@ -150,7 +150,7 @@ export default function Genshinimpact() {
         event.preventDefault();
         console.log(handleSubmit);
 
-        const phone_whatsapp = '6287750293463';
+        const phone_whatsapp = '6285852506481';
         const user_id = event.target.user_id.value;
         const zone_id = event.target.zone_id.value;
         const category = event.target.category.value;

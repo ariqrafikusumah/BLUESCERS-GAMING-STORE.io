@@ -135,7 +135,7 @@ export default function Freefire() {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(handleSubmit);
-        const phone_whatsapp = '6287750293463';
+        const phone_whatsapp = '6285852506481';
         const user_id = event.target.user_id.value;
         const category = event.target.category.value;
         const productsId = document.querySelector('input[name="product"]:checked');
