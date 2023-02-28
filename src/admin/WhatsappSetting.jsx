@@ -1,24 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import { uid } from 'uid'
 import { db } from '../database/firebase'
-import { PlusCircleIcon } from "@heroicons/react/24/solid";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Swal from "sweetalert2";
 import { FloatingLabel, Form, FormControl } from 'react-bootstrap';
-import { set, ref, onValue, remove, update } from "firebase/database";
+import { ref, onValue, update } from "firebase/database";
 
-function PopUp() {
+function WhatsappSetting() {
     const [dataTabel, setDataTabel] = useState('');
     const [modalShow, setModalShow] = React.useState(false);
     const [modalShow2, setModalShow2] = React.useState(false);
     const [isLoading, setisLoading] = useState(true);
     const [isError, setisError] = useState(false);
-    const [popup, setPopup] = useState('');
+    const [phone, setPhone] = useState('');
     const [tempUuid, setTempUuid] = useState('');
     // ** Read 
     useEffect(() => {
-        onValue(ref(db, `/popup`), (snapshot) => {
+        onValue(ref(db, `/phone-whatsapp`), (snapshot) => {
             let timerInterval
             Swal.fire({
                 title: 'Memuat data !',
@@ -62,7 +61,7 @@ function PopUp() {
             'uuid :', item.uuid
         );
         setModalShow2(true, item.uuid);
-        setPopup(item.popup);
+        setPhone(item.phone);
         setTempUuid(item.uuid);
     };
     if (isLoading)
@@ -85,7 +84,7 @@ function PopUp() {
                         <nav className="flex px-5 py-3 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 mt-3" aria-label="Breadcrumb">
                             <ol className="inline-flex items-center space-x-1 md:space-x-3">
                                 <li className="inline-flex items-center">
-                                    <a href="/admin/dashboard-admin" className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-500 ">
+                                    <a href="/admin/dashboard-admin" className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-indigo-600 ">
                                         <svg aria-hidden="true" className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" /></svg>
                                         Dashboard
                                     </a>
@@ -93,19 +92,19 @@ function PopUp() {
                                 <li>
                                     <div className="flex items-center">
                                         <svg aria-hidden="true" className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" /></svg>
-                                        <a href="/admin/pop-up" className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-500 md:ml-2 ">Setting</a>
+                                        <a href="/admin/whatsapp-setting" className="ml-1 text-sm font-medium text-gray-700 hover:text-indigo-600 md:ml-2 ">Setting</a>
                                     </div>
                                 </li>
                                 <li>
                                     <div className="flex items-center">
                                         <svg aria-hidden="true" className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" /></svg>
-                                        <a href="/admin/pop-up" className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-500 md:ml-2 ">Popup</a>
+                                        <a href="/admin/whatsapp-setting" className="ml-1 text-sm font-medium text-gray-700 hover:text-indigo-600 md:ml-2 ">Phone</a>
                                     </div>
                                 </li>
                             </ol>
                         </nav>
-                        <div className='text-3xl text-white font-bold mb-4 mt-10'>
-                            Popup
+                        <div className='text-3xl font-bold mb-4 mt-10'>
+                            Phone
                         </div>
 
                         <div>
@@ -114,7 +113,7 @@ function PopUp() {
                                     <thead className="bg-gray-50">
                                         <tr className="bg-gray-200 text-gray-700">
                                             <th className="py-2 px-4 border">No</th>
-                                            <th className="py-2 px-4 border">Popup</th>
+                                            <th className="py-2 px-4 border">Phone</th>
                                             <th className="py-2 px-4 border">Actions</th>
                                         </tr>
                                     </thead>
@@ -127,7 +126,7 @@ function PopUp() {
                                                             <div className="text-sm font-medium text-gray-900">{index + 1}</div>
                                                         </td>
                                                         <td className="px-6 py-6 whitespace-nowrap border">
-                                                            <div className="text-sm font-medium text-gray-900"><img className='w-full h-full' src={item.popup} alt="" /></div>
+                                                            <div className="text-sm font-medium text-gray-900">{item.phone}</div>
                                                         </td>
                                                         <td className="flex px-6 py-4 whitespace-nowrap border">
                                                             <div>
@@ -137,7 +136,7 @@ function PopUp() {
                                                                 <EditData
                                                                     show={modalShow2}
                                                                     onHide={() => setModalShow2(false)}
-                                                                    popup={popup}
+                                                                    phone={phone}
                                                                     uuid={tempUuid}
                                                                 />
                                                             </div>
@@ -158,12 +157,12 @@ function PopUp() {
 
 
 function EditData(props) {
-    const [popup, setPopup] = useState(props.popup || "");
+    const [phone, setPhone] = useState(props.phone || "");
     const [tempUuid, setTempUuid] = useState(props.uuid || "");
 
     useEffect(() => {
-        setPopup(props.popup || "");
-    }, [props.popup]);
+        setPhone(props.phone || "");
+    }, [props.phone]);
 
     useEffect(() => {
         // Update nilai tempUuid saat props.uuid berubah
@@ -171,7 +170,7 @@ function EditData(props) {
     }, [props.uuid]);
 
     const handleDataChange1 = (e) => {
-        setPopup(e.target.value)
+        setPhone(e.target.value)
     }
 
     // ** Update
@@ -179,11 +178,11 @@ function EditData(props) {
         console.log("tempUuid :", tempUuid);
         e.preventDefault();
         if (tempUuid) {
-            update(ref(db, `/popup/${tempUuid}`), {
-                popup,
+            update(ref(db, `/phone-whatsapp/${tempUuid}`), {
+                phone,
                 uuid: tempUuid,
             });
-            setPopup('');
+            setPhone('');
             window.location.reload();
             props.onHide();
         }
@@ -206,11 +205,11 @@ function EditData(props) {
                     </Modal.Header>
                     <Modal.Body>
                         <FloatingLabel
-                            controlId="floatingpopup"
-                            label="Popup"
+                            controlId="floatingPhone"
+                            label="Phone 62xxx"
                             className="mb-3"
                         >
-                            <FormControl type="text" value={popup} onChange={handleDataChange1} placeholder='Popup' />
+                            <FormControl type="text" value={phone} onChange={handleDataChange1} placeholder='Phone' />
                         </FloatingLabel>
                     </Modal.Body>
                     <Modal.Footer>
@@ -223,4 +222,4 @@ function EditData(props) {
     )
 }
 
-export default PopUp
+export default WhatsappSetting

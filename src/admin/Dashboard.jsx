@@ -187,6 +187,19 @@ function Dashboard() {
               </div>
             </div>
           </a>
+          <a href="/admin/whatsapp-setting" className=' no-underline'>
+            <div className=" hover:text-blue-500 hover:bg-blue-500 bg-white border shadow rounded-lg p-6">
+              <div className='flex gap-2'>
+                <div className='py-3'>
+                  <Cog6ToothIcon className='w-8 h-8' />
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold mb-2">Whatsapp Setting</h2>
+                  <p className="text-blue-500 text-lg font-bold">Edit</p>
+                </div>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </>
