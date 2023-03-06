@@ -58,6 +58,21 @@ export default function MobileLegends() {
         return result;
     };
 
+    // ** Read Phone-Whatsapp
+    const [phone, setPhone] = useState('');
+    useEffect(() => {
+        onValue(ref(db, '/phone-whatsapp'), (snapshot) => {
+            const data = snapshot.val();
+            if (data !== null) {
+                const phoneArr = Object.values(data).map((item) => item.phone);
+                setPhone(phoneArr);
+                setisLoading(false);
+            } else {
+                setisError(true);
+            }
+        })
+    }, []);
+
     // ** Read Data APi category
     const [dataCategory, setDataCategory] = useState([]);
     const id = '-NOQFV4o7ZV2Xzae7eSr';
@@ -149,7 +164,7 @@ export default function MobileLegends() {
         event.preventDefault();
         console.log(handleSubmit);
 
-        const phone_whatsapp = '6285852506481';
+        const phone_whatsapp = phone;
         const user_id = event.target.user_id.value;
         const zone_id = event.target.zone_id.value;
         const category = event.target.category.value;
@@ -192,7 +207,7 @@ export default function MobileLegends() {
                                         <div key={item}>
                                             <img className='h-32 w-32 rounded-xl' src={item.thumbnail} alt={item.category} />
                                             <h1 className='text-lg font-bold text-black'>{item.category}</h1>
-                                            <p className='text-sm h-auto text-black'>{item.description}</p>
+                                            <div dangerouslySetInnerHTML={{ __html: item.description }} />
                                         </div>
                                     </>
                                 ))}
@@ -383,7 +398,7 @@ export default function MobileLegends() {
                                         <div key={item}>
                                             <img className='h-32 w-32 rounded-xl' src={item.thumbnail} alt={item.category} />
                                             <h1 className='text-lg font-bold text-black'>{item.category}</h1>
-                                            <p className='text-sm h-auto text-black'>{item.description}</p>
+                                            <div dangerouslySetInnerHTML={{ __html: item.description }} />
                                         </div>
                                     </>
                                 ))}

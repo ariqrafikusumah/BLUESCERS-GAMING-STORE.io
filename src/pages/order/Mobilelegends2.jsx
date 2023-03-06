@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { ShoppingCartIcon } from '@heroicons/react/24/solid';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form';
 import { db } from '../../database/firebase';
 import { ref, onValue } from "firebase/database";
 
-export default function Genshinimpact() {
+export default function MobileLegends2() {
 
     // ** Modal Petunjuk
     const [show, setShow] = useState(false);
@@ -76,7 +75,7 @@ export default function Genshinimpact() {
 
     // ** Read Data APi category
     const [dataCategory, setDataCategory] = useState([]);
-    const id = '-NOQNACFEFS2UOJlWW-Z';
+    const id = '-NOQFV4o7ZV2Xzbe7eSr';
 
     useEffect(() => {
         onValue(ref(db, `/categories/${id}`), (snapshot) => {
@@ -94,7 +93,7 @@ export default function Genshinimpact() {
     const [dataProduct, setDataProduct] = useState([]);
 
     useEffect(() => {
-        onValue(ref(db, `/product-gi`), (snapshot) => {
+        onValue(ref(db, `/product-ml-2`), (snapshot) => {
             setDataProduct([]);
             const data = snapshot.val();
             if (data !== null) {
@@ -247,22 +246,15 @@ export default function Genshinimpact() {
                                                 {errorUser_id && <div className="errorUser_id text-sm text-red-500 sm:mb-3">{errorUser_id}</div>}
                                             </div>
                                             <div className="relative">
-                                                <Form.Select aria-label="Default select example" id="zone_id" name='zone_id' onChange={handleChangeZone_id} required >
-                                                    <option>- Pilih Server -</option>
-                                                    <option value="America">America</option>
-                                                    <option value="Europe">Europe</option>
-                                                    <option value="Asia">Asia</option>
-                                                    <option value="TW, HK, MO">TW, HK, MO</option>
-                                                </Form.Select>
-                                                {/* <input type="number" id="zone_id" name='zone_id' className="block border hover:ring-indigo-500 hover:border-indigo-500 px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="(                 ) " maxLength="5" value={zone_id} onChange={handleChangeZone_id} required />
-                                                <label htmlFor="zone_id" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">&nbsp; &nbsp;Zone ID </label> */}
+                                                <input type="number" id="zone_id" name='zone_id' className="block border hover:ring-blue-500 hover:border-blue-500 px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="" maxLength="5" value={zone_id} onChange={handleChangeZone_id} required />
+                                                <label htmlFor="zone_id" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">( Zone ID )</label>
                                                 {errorZone_id && <div className="errorZone_id text-sm text-red-500">{errorZone_id}</div>}
                                             </div>
                                         </div>
                                         <div>
                                             <div className='px-2'>
                                                 <div className=' font-thin italic text-justify text-xs mb-2'>
-                                                    Untuk menemukan UID Anda, masuk pakai akun Anda. Klik pada tombol profile di pojok kiri atas layar. Temukan UID dibawah avatar. Masukan UID Anda di sini. Selain itu, Anda juga dapat temukan UID Anda di pojok bawah kanan layar.
+                                                    Untuk mengetahui User ID Anda, silakan klik menu profile dibagian kiri atas pada menu utama game. User ID akan terlihat dibagian bawah Nama Karakter Game Anda. Silakan masukkan User ID Anda untuk menyelesaikan transaksi. Contoh : 12345678 (1234).
                                                 </div>
                                                 <Button className="flex gap-2 mt-3 text-white bg-gradient-to-br from-blue-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" onClick={handleShow}>
                                                     Petunjuk
@@ -373,7 +365,7 @@ export default function Genshinimpact() {
                                             </div>
                                             <div>
                                                 <input type="text" value={inputValue} name="kode_order" hidden />
-                                                <button type="submit" className="flex gap-2 mt-3 text-white bg-gradient-to-br from-blue-600 to-red-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"><ShoppingCartIcon className="w-5 h-5" /> Beli</button>
+                                                <button type="submit" className="flex gap-2 mt-3 text-white bg-gradient-to-br from-blue-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"><ShoppingCartIcon className="w-5 h-5" /> Beli</button>
                                             </div>
                                         </div>
                                     </div>
@@ -405,7 +397,7 @@ export default function Genshinimpact() {
                                     <>
                                         <div key={item}>
                                             <img className='h-32 w-32 rounded-xl' src={item.thumbnail} alt={item.category} />
-                                            <h1 className='text-lg font-bold'>{item.category}</h1>
+                                            <h1 className='text-lg font-bold text-black'>{item.category}</h1>
                                             <div dangerouslySetInnerHTML={{ __html: item.description }} />
                                         </div>
                                     </>
@@ -445,15 +437,8 @@ export default function Genshinimpact() {
                                                 {errorUser_id && <div className="errorUser_id text-sm text-red-500 sm:mb-3">{errorUser_id}</div>}
                                             </div>
                                             <div className="relative">
-                                                <Form.Select aria-label="Default select example" id="zone_id" name='zone_id' onChange={handleChangeZone_id} required >
-                                                    <option>- Pilih Server -</option>
-                                                    <option value="America">America</option>
-                                                    <option value="Europe">Europe</option>
-                                                    <option value="Asia">Asia</option>
-                                                    <option value="TW, HK, MO">TW, HK, MO</option>
-                                                </Form.Select>
-                                                {/* <input type="number" id="zone_id" name='zone_id' className="block border hover:ring-indigo-500 hover:border-indigo-500 px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="(                 ) " maxLength="5" value={zone_id} onChange={handleChangeZone_id} required />
-                                                <label htmlFor="zone_id" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">&nbsp; &nbsp;Zone ID </label> */}
+                                                <input type="number" id="zone_id" name='zone_id' className="block border hover:ring-blue-500 hover:border-blue-500 px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " maxLength="5" value={zone_id} onChange={handleChangeZone_id} required />
+                                                <label htmlFor="zone_id" className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"> ( Zone ID )</label>
                                                 {errorZone_id && <div className="errorZone_id text-sm text-red-500">{errorZone_id}</div>}
                                             </div>
                                         </div>
@@ -462,7 +447,7 @@ export default function Genshinimpact() {
                                                 <div className=' font-thin italic text-justify text-xs mb-2'>
                                                     Untuk mengetahui User ID Anda, silakan klik menu profile dibagian kiri atas pada menu utama game. User ID akan terlihat dibagian bawah Nama Karakter Game Anda. Silakan masukkan User ID Anda untuk menyelesaikan transaksi. Contoh : 12345678 (1234).
                                                 </div>
-                                                <Button className="flex gap-2 mt-3 text-white bg-gradient-to-br from-blue-600 to-blue-500 hover:bg-gradient-to-blue focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" onClick={handleShow}>
+                                                <Button className="flex gap-2 mt-3 text-white bg-gradient-to-br from-blue-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" onClick={handleShow}>
                                                     Petunjuk
                                                 </Button>
                                             </div>
@@ -480,7 +465,7 @@ export default function Genshinimpact() {
                                                 <>
                                                     <div key={item}>
                                                         <input type="radio" className='hidden peer' name='product' id={item.product_name} value={item.price} required />
-                                                        <label htmlFor={item.product_name} className='inline-flex peer-checked:shadow-xl items-center justify-between w-full p-2 text-gray-500 bg-white border peer-checked:ring-blueblueblue-500 peer-checked:ring-2 border-gray-200 rounded-lg cursor-pointer peer-checked:text-blueblueblue-600 hover:text-gray-600 hover:bg-gray-100'>
+                                                        <label htmlFor={item.product_name} className='inline-flex peer-checked:shadow-xl items-center justify-between w-full p-2 text-gray-500 bg-white border peer-checked:ring-blue-500 peer-checked:ring-2 border-gray-200 rounded-lg cursor-pointer peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100'>
                                                             <div className='block'>
                                                                 <div className='w-full text-sm font-bold'>{item.product_name}</div>
                                                                 <div className='w-full text-sm italic'>Rp {item.price},-</div>
