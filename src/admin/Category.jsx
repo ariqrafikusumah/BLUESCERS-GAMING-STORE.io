@@ -397,6 +397,8 @@ function EditData(props) {
                             <option value="populer">populer</option>
                             <option value="flash_sale">flash_sale</option>
                             <option value="top_up">top_up</option>
+                            <option value="voucher">voucher</option>
+                            <option value="aplikasi">aplikasi</option>
                             <option value="OFF">OFF</option>
                         </Form.Select>
                     </Modal.Body>

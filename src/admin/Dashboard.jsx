@@ -264,6 +264,186 @@ function Dashboard() {
               </div>
             </div>
           </a>
+          <a href="/admin/smile-one" className=' no-underline'>
+            <div className="hover:text-blue-500 hover:bg-blue-500 bg-white border shadow rounded-lg p-6">
+              <div className='flex gap-2'>
+                <div className='py-3'>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-9">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                  </svg>
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold mb-2">Smile One</h2>
+                  <p className="text-blue-500 text-lg font-bold">Edit</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="/admin/garena-shell" className=' no-underline'>
+            <div className="hover:text-blue-500 hover:bg-blue-500 bg-white border shadow rounded-lg p-6">
+              <div className='flex gap-2'>
+                <div className='py-3'>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-9">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                  </svg>
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold mb-2">Garena Shell</h2>
+                  <p className="text-blue-500 text-lg font-bold">Edit</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="/admin/unipin-brazil" className=' no-underline'>
+            <div className="hover:text-blue-500 hover:bg-blue-500 bg-white border shadow rounded-lg p-6">
+              <div className='flex gap-2'>
+                <div className='py-3'>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-9">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                  </svg>
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold mb-2">Unipin Brazil</h2>
+                  <p className="text-blue-500 text-lg font-bold">Edit</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="/admin/unipin-malay" className=' no-underline'>
+            <div className="hover:text-blue-500 hover:bg-blue-500 bg-white border shadow rounded-lg p-6">
+              <div className='flex gap-2'>
+                <div className='py-3'>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-9">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                  </svg>
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold mb-2">Unipin Malay</h2>
+                  <p className="text-blue-500 text-lg font-bold">Edit</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="/admin/youtube" className=' no-underline'>
+            <div className="hover:text-blue-500 hover:bg-blue-500 bg-white border shadow rounded-lg p-6">
+              <div className='flex gap-2'>
+                <div className='py-3'>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-9">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                  </svg>
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold mb-2">Youtube Premium</h2>
+                  <p className="text-blue-500 text-lg font-bold">Edit</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="/admin/netflix" className=' no-underline'>
+            <div className="hover:text-blue-500 hover:bg-blue-500 bg-white border shadow rounded-lg p-6">
+              <div className='flex gap-2'>
+                <div className='py-3'>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-9">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                  </svg>
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold mb-2">Netflix</h2>
+                  <p className="text-blue-500 text-lg font-bold">Edit</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="/admin/spotify" className=' no-underline'>
+            <div className="hover:text-blue-500 hover:bg-blue-500 bg-white border shadow rounded-lg p-6">
+              <div className='flex gap-2'>
+                <div className='py-3'>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-9">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                  </svg>
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold mb-2">Spotify</h2>
+                  <p className="text-blue-500 text-lg font-bold">Edit</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="/admin/wetv" className=' no-underline'>
+            <div className="hover:text-blue-500 hover:bg-blue-500 bg-white border shadow rounded-lg p-6">
+              <div className='flex gap-2'>
+                <div className='py-3'>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-9">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                  </svg>
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold mb-2">WeTv</h2>
+                  <p className="text-blue-500 text-lg font-bold">Edit</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="/admin/canva" className=' no-underline'>
+            <div className="hover:text-blue-500 hover:bg-blue-500 bg-white border shadow rounded-lg p-6">
+              <div className='flex gap-2'>
+                <div className='py-3'>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-9">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                  </svg>
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold mb-2">Canva</h2>
+                  <p className="text-blue-500 text-lg font-bold">Edit</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="/admin/vidio" className=' no-underline'>
+            <div className="hover:text-blue-500 hover:bg-blue-500 bg-white border shadow rounded-lg p-6">
+              <div className='flex gap-2'>
+                <div className='py-3'>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-9">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                  </svg>
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold mb-2">Vidio</h2>
+                  <p className="text-blue-500 text-lg font-bold">Edit</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="/admin/bsstation" className=' no-underline'>
+            <div className="hover:text-blue-500 hover:bg-blue-500 bg-white border shadow rounded-lg p-6">
+              <div className='flex gap-2'>
+                <div className='py-3'>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-9">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                  </svg>
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold mb-2">BS Station</h2>
+                  <p className="text-blue-500 text-lg font-bold">Edit</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="/admin/getcontact" className=' no-underline'>
+            <div className="hover:text-blue-500 hover:bg-blue-500 bg-white border shadow rounded-lg p-6">
+              <div className='flex gap-2'>
+                <div className='py-3'>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-9">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                  </svg>
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold mb-2">Get Contact</h2>
+                  <p className="text-blue-500 text-lg font-bold">Edit</p>
+                </div>
+              </div>
+            </div>
+          </a>
         </div>
         <h1 className="text-3xl font-bold mb-10 mt-10 text-black">- Payment</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

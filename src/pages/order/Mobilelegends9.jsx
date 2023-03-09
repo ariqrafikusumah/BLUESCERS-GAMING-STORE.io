@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { ShoppingCartIcon } from '@heroicons/react/24/solid';
+import { BuildingLibraryIcon, QrCodeIcon, ShoppingCartIcon, WalletIcon } from '@heroicons/react/24/solid';
+import { Accordion } from 'react-bootstrap';
+import AccordionItem from 'react-bootstrap/esm/AccordionItem';
+import AccordionHeader from 'react-bootstrap/esm/AccordionHeader';
+import AccordionBody from 'react-bootstrap/esm/AccordionBody';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { db } from '../../database/firebase';
@@ -293,55 +297,77 @@ export default function MobileLegends9() {
                                         <div className='font-bold text-lg'>
                                             <span className='border border-blue-500 bg-blue-500 px-2 text-white rounded-full'>3</span>&nbsp;Pilih Pembayaran
                                         </div>
-                                        {dataPaymentQris.map((item) => (
-                                            <>
-                                                <div className='mt-3'>
-                                                    <div key={item}>
-                                                        <input type="radio" className='hidden peer' name='payment' id={item.qris_name} value={item.qris_img} required />
-                                                        <label htmlFor={item.qris_name} className='inline-flex items-center justify-between w-full p-4 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:ring-blue-500 peer-checked:ring-2 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100'>
-                                                            <div className='block'>
-                                                                <div className='w-full text-sm font-semibold'>{item.qr_qris}</div>
-                                                                <div className='w-full text-sm italic'>A/n {item.qris_name}</div>
-                                                            </div>
-                                                            <img className='w-32 h-full ml-3' src={item.picture} alt="" />
-                                                        </label>
-                                                    </div>
-                                                </div>
-
-                                            </>
-                                        ))}
-                                        {dataPaymentBank.map((item) => (
-                                            <>
-                                                <div className='mt-3'>
-                                                    <div key={item}>
-                                                        <input type="radio" className='hidden peer' name='payment' id={item.bank_name} value={item.number_account} required />
-                                                        <label htmlFor={item.bank_name} className="inline-flex items-center justify-between w-full p-4 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:ring-blue-500 peer-checked:ring-2 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100">
-                                                            <div className='block'>
-                                                                <div className='w-full text-sm font-semibold'>{item.bank_name}</div>
-                                                                <div className='w-full text-sm italic'>A/n {item.first_name} {item.last_name}</div>
-                                                            </div>
-                                                            <img className='w-32 h-full ml-3' src={item.picture} alt={item.bank_name} />
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </>
-                                        ))}
-                                        {dataPaymentWallet.map((item) => (
-                                            <>
-                                                <div className='mt-3'>
-                                                    <div key={item}>
-                                                        <input type="radio" className='hidden peer' name='payment' id={item.wallet_name} value={item.number_account} required />
-                                                        <label htmlFor={item.wallet_name} className="inline-flex items-center justify-between w-full p-4 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:ring-blue-500 peer-checked:ring-2 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100">
-                                                            <div className='block'>
-                                                                <div className='w-full text-sm font-semibold'>{item.wallet_name}</div>
-                                                                <div className='w-full text-sm italic'>A/n {item.first_name} {item.last_name}</div>
-                                                            </div>
-                                                            <img className='w-32 h-full ml-3' src={item.picture} alt={item.wallet_name} />
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </>
-                                        ))}
+                                        <div className='mt-3'>
+                                            <Accordion>
+                                                <AccordionItem eventKey="0">
+                                                    <AccordionHeader className="font-bold"><BuildingLibraryIcon className='w-5' /> Bank Transfer</AccordionHeader>
+                                                    <AccordionBody>
+                                                        <div className='grid grid-cols-2 gap-2'>
+                                                            {dataPaymentBank.map((item) => (
+                                                                <>
+                                                                    <div key={item} className='mt-3'>
+                                                                        <div>
+                                                                            <input type="radio" className='hidden peer' name='payment' id={item.bank_name} value={item.number_account} required />
+                                                                            <label htmlFor={item.bank_name} className="items-center justify-between w-full p-3 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:ring-blue-500 peer-checked:ring-2 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100">
+                                                                                <div className='grid grid-rows-1'>
+                                                                                    <img className='w-12 h-8' src={item.picture} alt={item.bank_name} />
+                                                                                    <hr className='my-2' />
+                                                                                    <div className='w-full text-sm font-semibold'>{item.first_name} {item.last_name}</div>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </>
+                                                            ))}
+                                                        </div>
+                                                    </AccordionBody>
+                                                </AccordionItem>
+                                                <AccordionItem eventKey="2">
+                                                    <AccordionHeader className="font-bold"><WalletIcon className='w-5 ' /> E-Wallet</AccordionHeader>
+                                                    <AccordionBody>
+                                                        <div className='grid grid-cols-2 gap-2'>
+                                                            {dataPaymentWallet.map((item) => (
+                                                                <>
+                                                                    <div key={item} className='mt-3'>
+                                                                        <div>
+                                                                            <input type="radio" className='hidden peer' name='payment' id={item.wallet_name} value={item.number_account} required />
+                                                                            <label htmlFor={item.wallet_name} className="items-center justify-between w-full p-4 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:ring-blue-500 peer-checked:ring-2 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100">
+                                                                                <div className='grid grid-rows-1'>
+                                                                                    <img className='w-12 h-8' src={item.picture} alt={item.wallet_name} />
+                                                                                    <hr className='my-2' />
+                                                                                    <div className='w-full text-sm font-semibold'>{item.first_name} {item.last_name}</div>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </>
+                                                            ))}
+                                                        </div>
+                                                    </AccordionBody>
+                                                </AccordionItem>
+                                                <AccordionItem eventKey="3">
+                                                    <AccordionHeader className="font-bold"><QrCodeIcon className='w-5 ' /> QRIS</AccordionHeader>
+                                                    <AccordionBody>
+                                                        {dataPaymentQris.map((item) => (
+                                                            <>
+                                                                <div className='mt-3'>
+                                                                    <div key={item}>
+                                                                        <input type="radio" className='hidden peer' name='payment' id={item.qris_name} value={item.qris_img} required />
+                                                                        <label htmlFor={item.qris_name} className='items-center justify-between w-full p-4 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:ring-blue-500 peer-checked:ring-2 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100'>
+                                                                            <div className='grid grid-rows-1'>
+                                                                                <img className='w-12 h-8' src={item.picture} alt={item.qris_name} />
+                                                                                <hr className='my-2' />
+                                                                                <div className='w-full text-sm font-semibold'>{item.qris_name} </div>
+                                                                            </div>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </>
+                                                        ))}
+                                                    </AccordionBody>
+                                                </AccordionItem>
+                                            </Accordion>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -484,55 +510,77 @@ export default function MobileLegends9() {
                                         <div className='font-bold text-lg'>
                                             <span className='border border-blue-500 bg-blue-500 px-2 text-white rounded-full'>3</span>&nbsp;Pilih Pembayaran
                                         </div>
-                                        {dataPaymentQris.map((item) => (
-                                            <>
-                                                <div className='mt-3'>
-                                                    <div key={item}>
-                                                        <input type="radio" className='hidden peer' name='payment' id={item.qris_name} value={item.qris_img} required />
-                                                        <label htmlFor={item.qris_name} className='inline-flex items-center justify-between w-full p-4 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:ring-blue-500 peer-checked:ring-2 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100'>
-                                                            <div className='block'>
-                                                                <div className='w-full text-sm font-semibold'>{item.qr_qris}</div>
-                                                                <div className='w-full text-sm italic'>A/n {item.qris_name}</div>
-                                                            </div>
-                                                            <img className='w-32 h-full ml-3' src={item.picture} alt="" />
-                                                        </label>
-                                                    </div>
-                                                </div>
-
-                                            </>
-                                        ))}
-                                        {dataPaymentBank.map((item) => (
-                                            <>
-                                                <div className='mt-3'>
-                                                    <div key={item}>
-                                                        <input type="radio" className='hidden peer' name='payment' id={item.bank_name} value={item.number_account} required />
-                                                        <label htmlFor={item.bank_name} className="inline-flex items-center justify-between w-full p-4 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:ring-blue-500 peer-checked:ring-2 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100">
-                                                            <div className='block'>
-                                                                <div className='w-full text-sm font-semibold'>{item.bank_name}</div>
-                                                                <div className='w-full text-sm italic'>A/n {item.first_name} {item.last_name}</div>
-                                                            </div>
-                                                            <img className='w-32 h-full ml-3' src={item.picture} alt={item.bank_name} />
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </>
-                                        ))}
-                                        {dataPaymentWallet.map((item) => (
-                                            <>
-                                                <div className='mt-3'>
-                                                    <div key={item}>
-                                                        <input type="radio" className='hidden peer' name='payment' id={item.wallet_name} value={item.number_account} required />
-                                                        <label htmlFor={item.wallet_name} className="inline-flex items-center justify-between w-full p-4 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:ring-blue-500 peer-checked:ring-2 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100">
-                                                            <div className='block'>
-                                                                <div className='w-full text-sm font-semibold'>{item.wallet_name}</div>
-                                                                <div className='w-full text-sm italic'>A/n {item.first_name} {item.last_name}</div>
-                                                            </div>
-                                                            <img className='w-32 h-full ml-3' src={item.picture} alt={item.wallet_name} />
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </>
-                                        ))}
+                                        <div className='mt-3'>
+                                            <Accordion>
+                                                <AccordionItem eventKey="0">
+                                                    <AccordionHeader className="font-bold"><BuildingLibraryIcon className='w-5' /> Bank Transfer</AccordionHeader>
+                                                    <AccordionBody>
+                                                        <div className='grid grid-cols-2 gap-2'>
+                                                            {dataPaymentBank.map((item) => (
+                                                                <>
+                                                                    <div key={item} className='mt-3'>
+                                                                        <div>
+                                                                            <input type="radio" className='hidden peer' name='payment' id={item.bank_name} value={item.number_account} required />
+                                                                            <label htmlFor={item.bank_name} className="items-center justify-between w-full p-3 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:ring-blue-500 peer-checked:ring-2 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100">
+                                                                                <div className='grid grid-rows-1'>
+                                                                                    <img className='w-12 h-8' src={item.picture} alt={item.bank_name} />
+                                                                                    <hr className='my-2' />
+                                                                                    <div className='w-full text-sm font-semibold'>{item.first_name} {item.last_name}</div>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </>
+                                                            ))}
+                                                        </div>
+                                                    </AccordionBody>
+                                                </AccordionItem>
+                                                <AccordionItem eventKey="2">
+                                                    <AccordionHeader className="font-bold"><WalletIcon className='w-5 ' /> E-Wallet</AccordionHeader>
+                                                    <AccordionBody>
+                                                        <div className='grid grid-cols-2 gap-2'>
+                                                            {dataPaymentWallet.map((item) => (
+                                                                <>
+                                                                    <div key={item} className='mt-3'>
+                                                                        <div>
+                                                                            <input type="radio" className='hidden peer' name='payment' id={item.wallet_name} value={item.number_account} required />
+                                                                            <label htmlFor={item.wallet_name} className="items-center justify-between w-full p-4 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:ring-blue-500 peer-checked:ring-2 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100">
+                                                                                <div className='grid grid-rows-1'>
+                                                                                    <img className='w-12 h-8' src={item.picture} alt={item.wallet_name} />
+                                                                                    <hr className='my-2' />
+                                                                                    <div className='w-full text-sm font-semibold'>{item.first_name} {item.last_name}</div>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </>
+                                                            ))}
+                                                        </div>
+                                                    </AccordionBody>
+                                                </AccordionItem>
+                                                <AccordionItem eventKey="3">
+                                                    <AccordionHeader className="font-bold"><QrCodeIcon className='w-5 ' /> QRIS</AccordionHeader>
+                                                    <AccordionBody>
+                                                        {dataPaymentQris.map((item) => (
+                                                            <>
+                                                                <div className='mt-3'>
+                                                                    <div key={item}>
+                                                                        <input type="radio" className='hidden peer' name='payment' id={item.qris_name} value={item.qris_img} required />
+                                                                        <label htmlFor={item.qris_name} className='items-center justify-between w-full p-4 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:ring-blue-500 peer-checked:ring-2 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100'>
+                                                                            <div className='grid grid-rows-1'>
+                                                                                <img className='w-12 h-8' src={item.picture} alt={item.qris_name} />
+                                                                                <hr className='my-2' />
+                                                                                <div className='w-full text-sm font-semibold'>{item.qris_name} </div>
+                                                                            </div>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </>
+                                                        ))}
+                                                    </AccordionBody>
+                                                </AccordionItem>
+                                            </Accordion>
+                                        </div>
                                     </div>
                                 </div>
 

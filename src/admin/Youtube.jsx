@@ -9,7 +9,7 @@ import { FloatingLabel, Form, FormControl } from 'react-bootstrap';
 import { set, ref, onValue, remove, update } from "firebase/database";
 
 
-function Freefire() {
+function YouTube() {
     const [dataTabel, setDataTabel] = useState("");
     const [modalShow, setModalShow] = React.useState(false);
     const [modalShow2, setModalShow2] = React.useState(false);
@@ -23,7 +23,7 @@ function Freefire() {
 
     // ** Read
     useEffect(() => {
-        onValue(ref(db, `/product-ff`), (snapshot) => {
+        onValue(ref(db, `/product-youtube`), (snapshot) => {
             let timerInterval
             Swal.fire({
                 title: 'Memuat data !',
@@ -62,7 +62,7 @@ function Freefire() {
 
     // ** Delete
     const handleDelete = (item) => {
-        remove(ref(db, `/product-ff/${item.uuid}`));
+        remove(ref(db, `/product-youtube/${item.uuid}`));
     };
 
     //** Update
@@ -111,19 +111,19 @@ function Freefire() {
                                 <li>
                                     <div className="flex items-center">
                                         <svg aria-hidden="true" className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" /></svg>
-                                        <a href="/admin/free-fire" className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-500 md:ml-2 ">Product Games</a>
+                                        <a href="/admin/youtube" className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-500 md:ml-2 ">Product Games</a>
                                     </div>
                                 </li>
                                 <li>
                                     <div className="flex items-center">
                                         <svg aria-hidden="true" className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" /></svg>
-                                        <a href="/admin/s" className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-500 md:ml-2 ">Free Fire</a>
+                                        <a href="/admin/youtube" className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-500 md:ml-2 ">Youtube</a>
                                     </div>
                                 </li>
                             </ol>
                         </nav>
                         <div className='text-3xl text-white font-bold mb-4 mt-10'>
-                            Produk Free Fire
+                            Produk Youtube
                         </div>
                         <div>
                             <button className=" rounded-full"><PlusCircleIcon className="w-8 hover:text-white " onClick={() => setModalShow(true)} /></button>
@@ -214,19 +214,19 @@ function Freefire() {
                                 <li>
                                     <div className="flex items-center">
                                         <svg aria-hidden="true" className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" /></svg>
-                                        <a href="/admin/s" className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-500 md:ml-2 ">Product Games</a>
+                                        <a href="/admin/youtube" className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-500 md:ml-2 ">Product Games</a>
                                     </div>
                                 </li>
                                 <li>
                                     <div className="flex items-center">
                                         <svg aria-hidden="true" className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" /></svg>
-                                        <a href="/admin/ss" className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-500 md:ml-2 ">Free Fire</a>
+                                        <a href="/admin/youtube" className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-500 md:ml-2 ">Youtube</a>
                                     </div>
                                 </li>
                             </ol>
                         </nav>
                         <div className='text-3xl text-white font-bold mb-4 mt-10'>
-                            Produk Free Fire
+                            Produk Youtube
                         </div>
                         <div>
                             <button className=" rounded-full"><PlusCircleIcon className="w-8 hover:text-white " onClick={() => setModalShow(true)} /></button>
@@ -281,7 +281,7 @@ function TambahData(props) {
     // ** Write
     const handleOnSubmit = () => {
         const uuid = uid();
-        set(ref(db, `/product-ff/${uuid}`), {
+        set(ref(db, `/product-youtube/${uuid}`), {
             product_name,
             price,
             picture,
@@ -398,7 +398,7 @@ function EditData(props) {
         console.log("tempUuid :", product_name, price, picture, code, tempUuid);
         e.preventDefault();
         if (tempUuid) {
-            update(ref(db, `/product-ff/${tempUuid}`), {
+            update(ref(db, `/product-youtube/${tempUuid}`), {
                 product_name,
                 price,
                 picture,
@@ -471,7 +471,7 @@ function EditData(props) {
         </>
     )
 }
-export default Freefire
+export default YouTube
 
 
 

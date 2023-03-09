@@ -25,6 +25,7 @@ import Mobilelegends_6 from "./pages/order/Mobilelegends6";
 import Mobilelegends_7 from "./pages/order/Mobilelegends7";
 import Mobilelegends_8 from "./pages/order/Mobilelegends8";
 import Mobilelegends_9 from "./pages/order/Mobilelegends9";
+import SmileOne from "./pages/order/SmileOne";
 import Category from "./admin/Category";
 import Login from "./admin/Login";
 import Freefire from "./pages/order/Freefire";
@@ -48,6 +49,29 @@ import Starlightadmin from "./admin/Starlight";
 import Starlight from "./pages/order/Starlight";
 import Twilight from "./pages/order/Twilight";
 import TwilightAdmin from "./admin/Twilight";
+import Smileone from "./admin/Smileone";
+import GarenaShell from "./pages/order/GarenaShell";
+import Garenashell from "./admin/Garenashell";
+import Unipinmalay from "./admin/Unipinmalay";
+import Unipinbrazil from "./admin/Unipinbrazil";
+import UnipinBrazil from "./pages/order/UnipinBrazil";
+import UnipinMalay from "./pages/order/UnipinMalay";
+import Youtube from "./pages/order/Youtube";
+import Netflix from "./pages/order/Netflix";
+import Spotify from "./pages/order/Spotify";
+import WeTV from "./pages/order/WeTV";
+import Canva from "./pages/order/Canva";
+import Vidio from "./pages/order/Vidio";
+import BsStation from "./pages/order/BsStation";
+import GetContact from "./pages/order/GetContact";
+import YouTube from "./admin/Youtube";
+import NetFlix from "./admin/Netflix";
+import SpoTify from "./admin/Spotify";
+import WeTv from "./admin/WeTv";
+import CanvaPro from "./admin/Canva";
+import ViDio from "./admin/Vidio";
+import BSstation from "./admin/BSstation";
+import Getcontact from "./admin/Getcontact";
 
 function App() {
   return (
@@ -88,6 +112,18 @@ function App() {
         <Route path="/admin/mobile-legend-7" element={<Mobilelegend7 />} />
         <Route path="/admin/mobile-legend-8" element={<Mobilelegend8 />} />
         <Route path="/admin/mobile-legend-9" element={<Mobilelegend9 />} />
+        <Route path="/admin/smile-one" element={<Smileone />} />
+        <Route path="/admin/garena-shell" element={<Garenashell />} />
+        <Route path="/admin/unipin-brazil" element={<Unipinbrazil />} />
+        <Route path="/admin/unipin-malay" element={<Unipinmalay />} />
+        <Route path="/admin/youtube" element={<YouTube />} />
+        <Route path="/admin/netflix" element={<NetFlix />} />
+        <Route path="/admin/spotify" element={<SpoTify />} />
+        <Route path="/admin/wetv" element={<WeTv />} />
+        <Route path="/admin/canva" element={<CanvaPro />} />
+        <Route path="/admin/vidio" element={<ViDio />} />
+        <Route path="/admin/bsstation" element={<BSstation />} />
+        <Route path="/admin/getcontact" element={<Getcontact />} />
         <Route path="/order/flash-sale" element={<FlashSale />} />
         <Route path="/order/mobile-legends" element={<Mobilelegends />} />
         <Route path="/order/mobile-legends-2" element={<Mobilelegends_2 />} />
@@ -100,6 +136,18 @@ function App() {
         <Route path="/order/mobile-legends-7" element={<Mobilelegends_7 />} />
         <Route path="/order/mobile-legends-8" element={<Mobilelegends_8 />} />
         <Route path="/order/mobile-legends-9" element={<Mobilelegends_9 />} />
+        <Route path="/order/smile-one" element={<SmileOne />} />
+        <Route path="/order/garena-shell" element={<GarenaShell />} />
+        <Route path="/order/unipin-brazil" element={<UnipinBrazil />} />
+        <Route path="/order/unipin-malay" element={<UnipinMalay />} />
+        <Route path="/order/youtube-premium" element={<Youtube />} />
+        <Route path="/order/netflix" element={<Netflix />} />
+        <Route path="/order/spotify" element={<Spotify />} />
+        <Route path="/order/wetv" element={<WeTV />} />
+        <Route path="/order/canva" element={<Canva />} />
+        <Route path="/order/vidio" element={<Vidio/>} />
+        <Route path="/order/bs-station" element={<BsStation/>} />
+        <Route path="/order/getcontact" element={<GetContact/>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <FooterBot />

@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react'
 import Carousel from '../components/Carousel'
 import PopUp from '../components/PupUp'
 import { db } from '../database/firebase';
-import { equalTo, off, onValue, orderByChild, query, ref } from 'firebase/database';
+import { onValue, ref } from 'firebase/database';
 
 function Beranda() {
-  const [items, setItems] = useState([])
 
   // ** Read
   const [dataView, setDataView] = useState([]);
@@ -71,19 +70,16 @@ function Beranda() {
             {dataView.map((item) => (
               item.pilih_category === 'populer' && (
                 <div key={item.uuid}>
-                  <div className='rounded-lg'>
-                    <div>
+                  <a href={item.link}>
+                    <div className='rounded-lg'>
                       <div>
-                        <img className='rounded-xl h-32 w-32 mx-auto' src={item.thumbnail} alt={item.category} />
-                      </div>
-                      <div className='text-center font-bold text-black'>{item.category}</div>
-                      <div className='text-center'>
-                        <a href={item.link}>
-                          <button className="text-white bg-gradient-to-br from-blue-300 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-amber-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2"> Top Up </button>
-                        </a>
+                        <div>
+                          <img className='rounded-xl h-32 w-32 mx-auto hover:shadow-xl' src={item.thumbnail} alt={item.category} />
+                        </div>
+                        <div className='text-center font-bold text-black'>{item.category}</div>
                       </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
               )
             ))}
@@ -95,19 +91,16 @@ function Beranda() {
             {dataView.map((item) => (
               item.pilih_category === 'flash_sale' && (
                 <div key={item.uuid}>
-                  <div className='rounded-lg'>
-                    <div>
+                  <a href={item.link}>
+                    <div className='rounded-lg'>
                       <div>
-                        <img className='rounded-xl h-32 w-32 mx-auto' src={item.thumbnail} alt={item.category} />
-                      </div>
-                      <div className='text-center font-bold text-black'>{item.category}</div>
-                      <div className='text-center'>
-                        <a href={item.link}>
-                          <button className="text-white bg-gradient-to-br from-blue-300 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-amber-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2"> Top Up </button>
-                        </a>
+                        <div>
+                          <img className='rounded-xl h-32 w-32 mx-auto hover:shadow-xl' src={item.thumbnail} alt={item.category} />
+                        </div>
+                        <div className='text-center font-bold text-black'>{item.category}</div>
                       </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
               )
             ))}
@@ -119,19 +112,16 @@ function Beranda() {
             {dataView.map((item) => (
               item.pilih_category === 'top_up' && (
                 <div key={item.uuid}>
-                  <div className='rounded-lg'>
-                    <div>
+                  <a href={item.link}>
+                    <div className='rounded-lg'>
                       <div>
-                        <img className='rounded-xl h-32 w-32 mx-auto' src={item.thumbnail} alt={item.category} />
-                      </div>
-                      <div className='text-center font-bold text-black'>{item.category}</div>
-                      <div className='text-center'>
-                        <a href={item.link}>
-                          <button className="text-white bg-gradient-to-br from-blue-300 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-amber-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2"> Top Up </button>
-                        </a>
+                        <div>
+                          <img className='rounded-xl h-32 w-32 mx-auto hover:shadow-xl' src={item.thumbnail} alt={item.category} />
+                        </div>
+                        <div className='text-center font-bold text-black'>{item.category}</div>
                       </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
               )
             ))}
@@ -143,19 +133,16 @@ function Beranda() {
             {dataView.map((item) => (
               item.pilih_category === 'pre_order' && (
                 <div key={item.uuid}>
-                  <div className='rounded-lg'>
-                    <div>
+                  <a href={item.link}>
+                    <div className='rounded-lg'>
                       <div>
-                        <img className='rounded-xl h-32 w-32 mx-auto' src={item.thumbnail} alt={item.category} />
-                      </div>
-                      <div className='text-center font-bold text-black'>{item.category}</div>
-                      <div className='text-center'>
-                        <a href={item.link}>
-                          <button className="text-white bg-gradient-to-br from-blue-300 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-amber-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2"> Top Up </button>
-                        </a>
+                        <div>
+                          <img className='rounded-xl h-32 w-32 mx-auto hover:shadow-xl' src={item.thumbnail} alt={item.category} />
+                        </div>
+                        <div className='text-center font-bold text-black'>{item.category}</div>
                       </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
               )
             ))}
@@ -167,19 +154,58 @@ function Beranda() {
             {dataView.map((item) => (
               item.pilih_category === 'game_lainnya' && (
                 <div key={item.uuid}>
-                  <div className='rounded-lg'>
-                    <div>
+                  <a href={item.link}>
+                    <div className='rounded-lg'>
                       <div>
-                        <img className='rounded-xl h-32 w-32 mx-auto' src={item.thumbnail} alt={item.category} />
-                      </div>
-                      <div className='text-center font-bold text-black'>{item.category}</div>
-                      <div className='text-center'>
-                        <a href={item.link}>
-                          <button className="text-white bg-gradient-to-br from-blue-300 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-amber-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2"> Top Up </button>
-                        </a>
+                        <div>
+                          <img className='rounded-xl h-32 w-32 mx-auto hover:shadow-xl' src={item.thumbnail} alt={item.category} />
+                        </div>
+                        <div className='text-center font-bold text-black'>{item.category}</div>
                       </div>
                     </div>
-                  </div>
+                  </a>
+                </div>
+              )
+            ))}
+          </div>
+          <div className='mt-5 mb-5'>
+            <span className='text-2xl font-bold text-blac'>Voucher Game</span>
+          </div>
+          <div className='grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-2 xs:grid-cols-2 xss:grid-cols-2 gap-4'>
+            {dataView.map((item) => (
+              item.pilih_category === 'voucher' && (
+                <div key={item.uuid}>
+                  <a href={item.link}>
+                    <div className='rounded-lg'>
+                      <div>
+                        <div>
+                          <img className='rounded-xl h-32 w-32 mx-auto hover:shadow-xl' src={item.thumbnail} alt={item.category} />
+                        </div>
+                        <div className='text-center font-bold text-black'>{item.category}</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              )
+            ))}
+          </div>
+          <div className='mt-5 mb-5'>
+            <span className='text-2xl font-bold text-blac'>Aplikasi Premium</span>
+          </div>
+          <div className='grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-2 xs:grid-cols-2 xss:grid-cols-2 gap-4'>
+            {dataView.map((item) => (
+              item.pilih_category === 'aplikasi' && (
+                <div key={item.uuid}>
+                  <a href={item.link}>
+                    <div className='rounded-lg'>
+                      <div>
+                        <div>
+                          <img className='rounded-xl h-32 w-32 mx-auto hover:shadow-xl' src={item.thumbnail} alt={item.category} />
+                        </div>
+                        <div className='text-center font-bold text-black'>{item.category}</div>
+                      </div>
+                    </div>
+                  </a>
                 </div>
               )
             ))}
